@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/themes/text_theme.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -19,7 +20,10 @@ class AppDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 25, top: 25),
             child: ListTile(
-              title: const Text('H O M E'),
+              title: Text(
+                'HOME',
+                style: drawerTextTheme,
+              ),
               leading: const Icon(Icons.home),
               onTap: () {
                 Navigator.pop(context);
@@ -30,7 +34,10 @@ class AppDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 25, top: 25),
             child: ListTile(
-              title: const Text('S E T T I N G S'),
+              title: Text(
+                'SETTINGS',
+                style: drawerTextTheme,
+              ),
               leading: const Icon(Icons.settings),
               onTap: () {
                 Navigator.pop(context);

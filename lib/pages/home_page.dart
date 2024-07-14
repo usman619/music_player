@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/components/app_drawer.dart';
+import 'package:music_player/themes/text_theme.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,11 +8,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      // backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-          title: const Text('P L A Y L I S T'),
-          centerTitle: true,
-          backgroundColor: Theme.of(context).colorScheme.primary),
+        backgroundColor: Theme.of(context).colorScheme.surface,
+
+        title: Text(
+          'PLAYLIST',
+          style: titleTextTheme,
+        ),
+
+        centerTitle: true,
+        // backgroundColor: Theme.of(context).colorScheme.primary
+      ),
       drawer: const AppDrawer(),
     );
   }

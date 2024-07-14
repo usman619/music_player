@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:music_player/themes/text_theme.dart';
 import 'package:music_player/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -9,11 +10,13 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: const Text('S E T T I N G S'),
-        centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.surface,
+        title: Text(
+          'SETTINGS',
+          style: titleTextTheme,
+        ),
+        centerTitle: true,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -26,9 +29,9 @@ class SettingsPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Switch App Theme
-            const Text(
+            Text(
               'Dark Mode',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: bodyTextTheme,
             ),
             CupertinoSwitch(
               value:
