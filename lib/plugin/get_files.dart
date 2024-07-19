@@ -57,6 +57,24 @@ class _GetFilesState extends State<GetFiles> {
     );
   }
 
+  // @override Widget build(BuildContext context) {
+  //   return Center(
+  //     child: GridView.builder(
+  //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+  //         crossAxisCount: 2,
+  //         crossAxisSpacing: 10,
+  //         mainAxisSpacing: 10,
+  //         childAspectRatio: 1,
+  //       ),
+  //       itemCount: widget.files.length,
+  //       itemBuilder: (context, index) {
+  //         final file = widget.files[index];
+  //         return buildFile(file);
+  //       },
+  //     ),
+  //   );
+  // }
+
   Widget buildFile(PlatformFile file) {
     final name = file.name;
     final imageData = extractedImages[name];
@@ -78,46 +96,3 @@ class _GetFilesState extends State<GetFiles> {
     );
   }
 }
-
-
-
-
-// import 'package:file_picker/file_picker.dart';
-// import 'package:flutter/material.dart';
-
-// class GetFiles extends StatefulWidget {
-//   final List<PlatformFile> files;
-//   final ValueChanged<PlatformFile> onOpenedFile;
-
-//   const GetFiles({super.key, required this.files, required this.onOpenedFile});
-
-//   @override
-//   State<GetFiles> createState() => _GetFilesState();
-// }
-
-// class _GetFilesState extends State<GetFiles> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//       child: GridView.builder(
-//         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//           crossAxisCount: 2,
-//           crossAxisSpacing: 10,
-//           mainAxisSpacing: 10,
-//           childAspectRatio: 1,
-//         ),
-//         itemCount: widget.files.length,
-//         itemBuilder: (context, index) {
-//           final file = widget.files[index];
-
-//           return buildFile(file);
-//         },
-//       ),
-//     );
-//   }
-
-//   Widget buildFile(PlatformFile file) {
-//     final name = file.name;
-
-//   }
-// }

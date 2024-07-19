@@ -33,16 +33,16 @@ class _HomePageState extends State<HomePage> {
       drawer: const AppDrawer(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).colorScheme.secondary,
+        onPressed: _pickFiles,
         child: Icon(Icons.add,
             color: Theme.of(context).colorScheme.inversePrimary),
-        onPressed: _pickFiles,
       ),
       body: _files.isNotEmpty
           ? GetFiles(
               files: _files,
               onOpenedFile: openFile,
             )
-          : Center(child: Text('No files selected')),
+          : const Center(child: Text('No files selected')),
     );
   }
 

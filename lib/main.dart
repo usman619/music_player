@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/pages/home_page.dart';
 import 'package:music_player/pages/settings_page.dart';
+import 'package:music_player/pages/song_page.dart';
 import 'package:music_player/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         '/settings': (context) => const SettingsPage(),
       },
       theme: Provider.of<ThemeProvider>(context).themeData,
-      home: const HomePage(),
+      home: const SongPage(),
     );
   }
 }

@@ -1,25 +1,9 @@
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
+
 class Song {
-  final String title;
-  final String artist;
-  final String album;
-  final String albumArt;
-  final String url;
+  final List<PlatformFile> files;
+  final ValueChanged<PlatformFile> onOpenedFile;
 
-  Song({
-    required this.title,
-    required this.artist,
-    required this.album,
-    required this.albumArt,
-    required this.url,
-  });
-
-  factory Song.fromJson(Map<String, dynamic> json) {
-    return Song(
-      title: json['title'],
-      artist: json['artist'],
-      album: json['album'],
-      albumArt: json['albumArt'],
-      url: json['url'],
-    );
-  }
+  const Song({required this.files, required this.onOpenedFile});
 }
