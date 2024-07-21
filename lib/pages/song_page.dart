@@ -1,6 +1,5 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
+import 'package:music_player/components/app_drawer.dart';
 import 'package:music_player/components/neu_box.dart';
 import 'package:music_player/themes/text_theme.dart';
 
@@ -38,7 +37,10 @@ class SongPage extends StatelessWidget {
                     style: titleTextTheme,
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      //Open app drawer
+                      Scaffold.of(context).openEndDrawer();
+                    },
                     icon: const Icon(Icons.menu),
                   ),
                 ],
@@ -46,7 +48,16 @@ class SongPage extends StatelessWidget {
               const SizedBox(height: 25),
               NeuBox(
                 child: Column(children: [
-                  _musicIcon(context),
+                  // _musicIcon(context),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.asset(
+                      'assets/images/song.png',
+                      height: 300,
+                      width: 300,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -75,8 +86,6 @@ class SongPage extends StatelessWidget {
                     ],
                   ),
                 ]),
-                // Image.asset('assets/song_image/default_song.png',
-                // height: 100, width: 100),
               ),
               const SizedBox(height: 25),
 
@@ -138,23 +147,45 @@ class SongPage extends StatelessWidget {
               ),
 
               // Music Controls
+
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.skip_previous),
-                    iconSize: 50,
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: const NeuBox(
+                        child: Icon(
+                          Icons.skip_previous,
+                          size: 40,
+                        ),
+                      ),
+                    ),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.play_arrow),
-                    iconSize: 50,
+                  const SizedBox(width: 10),
+                  Expanded(
+                    flex: 2,
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: const NeuBox(
+                        child: Icon(
+                          Icons.play_arrow,
+                          size: 40,
+                        ),
+                      ),
+                    ),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.skip_next),
-                    iconSize: 50,
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: const NeuBox(
+                        child: Icon(
+                          Icons.skip_next,
+                          size: 40,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -165,11 +196,11 @@ class SongPage extends StatelessWidget {
     );
   }
 
-  _musicIcon(BuildContext context) {
-    return Icon(
-      Icons.music_note_sharp,
-      size: 250,
-      color: Theme.of(context).colorScheme.inversePrimary,
-    );
-  }
+  // _musicIcon(BuildContext context) {
+  //   return Icon(
+  //     Icons.music_note_sharp,
+  //     size: 250,
+  //     color: Theme.of(context).colorScheme.inversePrimary,
+  //   );
+  // }
 }
